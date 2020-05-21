@@ -1,4 +1,3 @@
-# ???
 def merge(arr, p, q, r):
     n1 = p - q + 1
     n2 = r - q
