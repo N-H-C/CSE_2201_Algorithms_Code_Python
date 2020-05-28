@@ -28,7 +28,7 @@ def merge_sort(arr, p, r):
 
 
 a = input("Enter elements separated by space: ").split(' ')
-arr = [int(i) for i in a]
+ar = [int(i) for i in a]
 
-merge_sort(arr, 0, len(arr) - 1)
-print("Sorted array: ", arr)
+merge_sort(ar, 0, len(ar) - 1)
+print("Sorted array: ", ar)
