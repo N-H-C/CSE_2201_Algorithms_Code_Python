@@ -2,7 +2,7 @@
 Problem: Fractional knapsack problem
 Original source: https://gist.github.com/uan4ik/2a82e838499b41507358
 """
-print("Enter item number and total weight: ", end="")
+print("Enter number of times and total weight: ", end="")
 n, total_weight = map(int, input().split())
 
 print("Enter %d items' value and weight in separate lines." %n)
