@@ -1,0 +1,30 @@
+def dfs(adj, visit, current_node):
+    if current_node not in visit:
+        visit.add(current_node)
+
+        for neighbour in adj[current_node]:
+            if neighbour not in visit:
+                dfs(adj, visit, neighbour)
+
+        print(current_node, end=' ')
+
+
+n = int(input("Enter number of nodes: "))
+e = int(input("Enter number of edges: "))
+
+adj_list = [[] for i in range(n)]
+
+undirected_graph = input("Undirected graph? (Y/N)")
+print("Enter edges (u, v) in separate line(s).")
+for i in range(e):
+    u, v = map(int, input().split())
+    adj_list[u].append(v)
+    if undirected_graph == 'Y' or undirected_graph == 'y':
+        adj_list[v].append(u)
+
+visited = set()
+
+print("DFS: ", end='')
+for i in range(n):
+    if i not in visited:
+        dfs(adj_list, visited, i)

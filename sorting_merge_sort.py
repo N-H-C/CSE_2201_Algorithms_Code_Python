@@ -1,15 +1,15 @@
-def merge(arr, p, q, r):
-    n1 = p - q + 1
-    n2 = r - q
+def merge(arr, start, middle, end):
+    n1 = start - middle + 1
+    n2 = end - middle
 
-    L = arr[p: q + 1]
-    R = arr[q + 1: r + 1]
+    L = arr[start: middle + 1]
+    R = arr[middle + 1: end + 1]
     L.append(float('inf'))
     R.append(float('inf'))
 
     i = 0
     j = 0
-    for k in range(p, r + 1):
+    for k in range(start, end + 1):
         if L[i] <= R[j]:
             arr[k] = L[i]
             i += 1
@@ -18,13 +18,13 @@ def merge(arr, p, q, r):
             j += 1
 
 
-def merge_sort(arr, p, r):
-    if p < r:
-        q = (p + r) // 2
-        merge_sort(arr, p, q)
-        merge_sort(arr, q + 1, r)
+def merge_sort(arr, start, end):
+    if start < end:
+        middle = (start + end) // 2
+        merge_sort(arr, start, q)
+        merge_sort(arr, middle + 1, end)
 
-        merge(arr, p, q, r)
+        merge(arr, start, middle, end)
 
 
 a = input("Enter elements separated by space: ").split(' ')

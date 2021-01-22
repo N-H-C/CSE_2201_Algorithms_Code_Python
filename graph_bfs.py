@@ -20,7 +20,6 @@ def bfs(adj, source):
                 q.put(adjacent_node)
 
 
-
 n = int(input("Enter the number of nodes: "))
 e = int(input("Enter the number of edges: "))
 
